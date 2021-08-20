@@ -1,16 +1,13 @@
 let input = document.querySelector('.grocery');
 let list = document.querySelector('.grocery-list');
 let msgBox = document.querySelector('.msg');
-let edit = {element:null,isEditable:false};
 let submitBtn = document.querySelector('.submit-btn');
-let item = document.getElementsByClassName(`.item-container`);
-submitBtn.addEventListener('click', function (event) {
-	buttonSubmit();
-});
-document.querySelector('.clear-btn').addEventListener('click', function (event) {
-	clearItem();
-});
-let itemList = [];
+let clearBtn = document.querySelector(`.clear-btn`);
+
+let edit = {element:null,isEditable:false};
+
+submitBtn.addEventListener('click', function (event) {buttonSubmit();});
+clearBtn.addEventListener('click', function (event) {clearItem();});
 
 function showMsg(msg) {
 	msgBox.innerText = msg;
@@ -44,7 +41,6 @@ function editBtn(e) {
 	edit.element = listItem.querySelector('p');
 	input.value = listItem.querySelector('p').innerText;
 	submitBtn.innerText = 'Edit';
-	listItem.querySelector('p').innerText = input.value;
 }
 
 function deleteBtn(e) {
