@@ -37,6 +37,7 @@ function buttonSubmit() {
 			showMsg(`Item Added to the List`);
 		}
 		input.value = '';
+		input.auto
 	}
 }
 
